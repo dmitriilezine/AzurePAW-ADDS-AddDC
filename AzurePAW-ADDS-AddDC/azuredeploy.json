@@ -41,13 +41,7 @@
       },
       "defaultValue": "[concat('Subscription#',subscription().subscriptionId)]"
     },
-    "dsrmPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "The password for the DSRM account for ADDS. If you do not change it, then it will look like this: Subscription#SUBSCRIPTIONID"
-      },
-      "defaultValue": "[concat('Subscription#',subscription().subscriptionId)]"
-    },
+   
     "existingVirtualNetworkName": {
       "type": "string",
       "defaultValue": "Existing vNet Name where this deployment will be deployed to",
