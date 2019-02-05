@@ -63,6 +63,12 @@
         "description": "The size of the AD VMs Created"
       }
     },
+    "ouPath": {
+      "type": "string",
+      "metadata": {
+        "description": "Target OU for VM"
+      }
+    },
     "windowsImageOffer": {
       "type": "string",
       "metadata": {
@@ -232,7 +238,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "Name": "[parameters('domainName')]",
-          "OUPath": "",
+          "OUPath": "[parameters('ouPath')]",
           "User": "[variables('joinUserDN')]",
           "Restart": "true",
           "Options": "[variables('domainJoinOptions')]"

@@ -170,6 +170,8 @@
     "assetLocationStorageAccount": "[parameters('ScriptsLocation')]",
     "VMSize": "[parameters('VirtualMachineSize')]",
     "OSVersion": "2016-Datacenter",
+    "imageOffer": "WindowsServer",
+    "imagePublisher": "MicrosoftWindowsServer",
 
     "ADDSsubnetResourceID": "[resourceId(parameters('existingVirtualNetworkRG'), 'Microsoft.Network/virtualNetworks/subnets', parameters('existingVirtualNetworkName'), parameters('DomainControllersSubnetName'))]",
 
@@ -219,9 +221,6 @@
     "secretskeyVaultID": "[concat('/subscriptions/', parameters('subscriptionID'), '/resourceGroups/', variables('secretsKeyVaultRG'), '/providers/Microsoft.KeyVault/vaults/', variables('secretsVaultName'))]",
 
     "diagnosticsaccountid": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/',parameters('StorageAccountRG'), '/providers/','Microsoft.Storage/storageAccounts/', parameters('diagnosticsStorageAccountName'))]",
-
-    "imageOffer": "WindowsServer",
-    "imagePublisher": "MicrosoftWindowsServer",
 
     "adAvailabilitySetName": "[parameters('availabilitySetName')]",
 
@@ -274,6 +273,9 @@
           },
           "adAvailabilitySetName": {
             "value": "[variables('adAvailabilitySetName')]"
+          },
+          "ouPath": {
+            "value": "[variables('ouPathAdmin')]"
           },
           "diagnosticsStorageAccountName": {
             "value": "[parameters('diagnosticsStorageAccountName')]"
